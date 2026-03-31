@@ -1,0 +1,7 @@
+MIN_RATE = 1
+MAX_RATE = 10
+
+DEFAULT_WISHLIST_TITLE = "My Wishlist"
+
+STATUS_ARCHIVED = "archived"
+STATUS_ACTIVE = "active"
