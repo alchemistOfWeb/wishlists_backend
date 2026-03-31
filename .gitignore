@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtualenv
+.venv/
+venv/
+env/
+
+# Poetry
+poetry.lock
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+
+# Alembic
+migrations/versions/*.pyc
+
+# Docker
+docker-compose.override.yml
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Node 
+node_modules/
+
+# Temporary
+*.tmp
+*.temp
