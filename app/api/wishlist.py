@@ -251,30 +251,74 @@ def set_gifted(
     return wish
 
 
-@router.patch("/item/{item_id}/status")
-def update_status(
+@router.patch("/item/{item_id}/is_archieved")
+def set_archived(
     item_id: int,
-    data: WishItemStatusUpdate,
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
-    wish = db.query(WishItem).filter(WishItem.id == item_id).first()
+    item = db.query(WishItem).filter(WishItem.id == item_id).first()
 
-    if data.is_gifted is not None:
-        wish.is_gifted = data.is_gifted
-
-    if data.is_delivering is not None:
-        wish.is_delivering = data.is_delivering
-
-    if data.is_archieved is not None:
-        wish.is_archieved = data.is_archieved
-
-    if data.is_deleted is not None:
-        wish.is_deleted = data.is_deleted
+    item.is_archieved = True
 
     db.commit()
 
-    return wish
+    return item
+
+
+@router.patch("/item/{item_id}/is_delivering")
+def set_delivering(
+    item_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+):
+    item = db.query(WishItem).filter(WishItem.id == item_id).first()
+
+    item.is_delivering = True
+
+    db.commit()
+
+    return item
+
+
+@router.patch("/item/{item_id}/is_gifted")
+def set_gifted(
+    item_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+):
+    item = db.query(WishItem).filter(WishItem.id == item_id).first()
+
+    item.is_gifted = True
+
+    db.commit()
+
+    return item
+
+# @router.patch("/item/{item_id}/status")
+# def update_status(
+#     item_id: int,
+#     data: WishItemStatusUpdate,
+#     db: Session = Depends(get_db),
+#     user: User = Depends(get_current_user),
+# ):
+#     wish = db.query(WishItem).filter(WishItem.id == item_id).first()
+
+#     if data.is_gifted is not None:
+#         wish.is_gifted = data.is_gifted
+
+#     if data.is_delivering is not None:
+#         wish.is_delivering = data.is_delivering
+
+#     if data.is_archieved is not None:
+#         wish.is_archieved = data.is_archieved
+
+#     if data.is_deleted is not None:
+#         wish.is_deleted = data.is_deleted
+
+#     db.commit()
+
+#     return wish
 
 
 @router.get("/friend/{user_id}")
