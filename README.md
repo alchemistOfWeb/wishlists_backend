@@ -24,23 +24,23 @@ course project
     * [ ] custom events
 
 * my wishlist page
-    * [ ] get: list of wishlist items
-        * [ ] need to display tags also - Для запроса на список items в вишлисте нужно добавить поле тегов в ответе в теле каждого item
+    * [x] get: list of wishlist items
+        * [x] need to display tags also - Для запроса на список items в вишлисте нужно добавить поле тегов в ответе в теле каждого item
     * [x] post: create wish {"product_name", "description", "rate"(насколько интересен подарок владельцу вишлиста), "tags"<->M2M, "expiration_date"(default: none)}
     * [x] delete: completely delete product, 
     * [x] post: update {"product_name", "description", add tags, set status}
-    * [ ] patch: add tags
-    * [ ] patch: set status ("is_gifted", "is_delivering", "is_archieved", "is_deleted") # если уже заказан и был внезапно удален или archieved, то об этом придет уведомление другу-заказчику; если gifted, то будет отображаться в отдельной секции видной всем; если archieved, то будет видно только владельцу вишлиста
-* [ ] friend's wishlist page
-    * [ ] get: pruduct ordered (отмечаем подарок как уже заказанный, чтобы другие пользователи видели, но не сам friend)
+    * [x] patch: add tags
+    * [x] patch: set status ("is_gifted", "is_delivering", "is_archieved", "is_deleted") # если уже заказан и был внезапно удален или archieved, то об этом придет уведомление другу-заказчику; если gifted, то будет отображаться в отдельной секции видной всем; если archieved, то будет видно только владельцу вишлиста
+* friend's wishlist page
+    * [x] get: pruduct ordered (отмечаем подарок как уже заказанный, чтобы другие пользователи видели, но не сам friend)
     * subscribe or accept (см. пункт firends)
 * auth system (API JWT)
     * [x] post: sign up
     * [x] post: sign in
     * [x] post: sign out
-* [ ] friends
-    * [ ] delete: (удалить запись промежуточной таблицы friendship)
-    * [ ] post: add or accept (создать или обновить (если друг уже подписан на вас) запись промежуточной таблицы friendship)
+* friends
+    * [x] delete: (удалить запись промежуточной таблицы friendship)
+    * [x] post: add or accept (создать или обновить (если друг уже подписан на вас) запись промежуточной таблицы friendship)
 * [ ] gift recommendations (with AI - mb openAI api - or some algorithms)
     * [ ] get: list of recommendations with pagination
 * [ ] goods - можно посмотреть какие товары выбирают другие и добавить копию в свой вишлист
