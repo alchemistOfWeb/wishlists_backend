@@ -1,6 +1,7 @@
 from .user import User
 from .friendship import Friendship
 from .event import Event
+from .global_event import GlobalEvent
 from .notification import Notification
 from .wishlist import Wishlist
 from .wish_item import WishItem
